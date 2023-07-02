@@ -222,6 +222,15 @@ input:checked ~ .bolha::after {
 	opacity: 0.75;
 }
 
+.todo-item .actions .editar {
+	margin-right: 0.5rem;
+	background-color: var(--primary);
+}
+
+.todo-item .actions .excluir {
+	background-color: var(--danger);
+}
+
 .tarefa.concluida .conteudo-tarefa input {
 	text-decoration: line-through;
 	color: var(--cinza);
