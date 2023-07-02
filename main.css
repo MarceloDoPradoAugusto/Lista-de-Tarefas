@@ -1,0 +1,228 @@
+/* Variáveis */
+:root {
+	--principal: #EA40A4;
+	--negocios: #3a82ee;
+	--pessoal: var(--principal);
+	--claro: #EEE;
+	--cinza: #888;
+	--escuro: #313154;
+	--perigo: #ff5b57;
+
+	--sombra: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+	--brilho-negocios: 0px 0px 4px rgba(58, 130, 238, 0.75);
+	--brilho-pessoal: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+/* Fim das Variáveis */
+
+/* Resets */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: initial;
+}
+/* Fim dos Resets */
+
+body {
+	background: var(--claro);
+	color: var(--escuro);
+}
+
+section {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+h3 {
+	color: var(--escuro);
+	font-size: 1rem;
+	font-weight: 400;
+	margin-bottom: 0.5rem;
+}
+
+h4 {
+	color: var(--cinza);
+	font-size: 0.875rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+
+.saudacao .titulo {
+	display: flex;
+}
+
+.saudacao .titulo input {
+	margin-left: 0.5rem;
+	flex: 1 1 0%;
+	min-width: 0;
+}
+
+.saudacao .titulo,
+.saudacao .titulo input {
+	color: var(--escuro);
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.criar-tarefa input[type="text"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: var(--escuro);
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	box-shadow: var(--sombra);
+	margin-bottom: 1.5rem;
+}
+
+.criar-tarefa .opcoes {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.criar-tarefa .opcoes label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #FFF;
+	padding: 1.5rem;
+	box-shadow: var(--sombra);
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: none;
+}
+
+.bolha {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 999px;
+	border: 2px solid var(--negocios);
+	box-shadow: var(--brilho-negocios);
+}
+
+.bolha.pessoal {
+	border-color: var(--pessoal);
+	box-shadow: var(--brilho-pessoal);
+}
+
+.bolha::after {
+	content: '';
+	display: block;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	background-color: var(--negocios);
+	box-shadow: var(--brilho-negocios);
+	border-radius: 999px;
+	transition: 0.2s ease-in-out;
+}
+
+.bolha.pessoal::after {
+	background-color: var(--pessoal);
+	box-shadow: var(--brilho-pessoal);
+}
+
+input:checked ~ .bolha::after {
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+}
+
+.criar-tarefa .opcoes label div {
+	color: var(--escuro);
+	font-size: 1.125rem;
+	margin-top: 1rem;
+}
+
+.criar-tarefa input[type="submit"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: #FFF;
+	font-weight: 700;
+	text-transform: uppercase;
+	background-color: var(--principal);
+	box-shadow: var(--brilho-pessoal);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+}
+
+.criar-tarefa input[type="submit"]:hover {
+	opacity: 0.75;
+}
+
+.lista-tarefas .lista {
+	margin: 1rem 0;
+}
+
+.lista-tarefas .tarefa {
+	display: flex;
+	align-items: center;
+	background-color: #FFF;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--sombra);
+	margin-bottom: 1rem;
+}
+
+.tarefa label {
+	display: block;
+	margin-right: 1rem;
+	cursor: pointer;
+}
+
+.tarefa .conteudo-tarefa {
+	flex: 1 1 0%;
+}
+
+.tarefa .conteudo-tarefa input {
+	color: var(--escuro);
+	font-size: 1.125rem;
+}
+
+.tarefa .acoes {
+	display: flex;
+	align-items: center;
+}
+
+.tarefa .acoes button {
+	display: block;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	color: #FFF;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+.tarefa .acoes button:hover {
+	opacity: 0.75;
+}
+
+.tarefa.concluida .conteudo-tarefa input {
+	text-decoration: line-through;
+	color: var(--cinza);
+}

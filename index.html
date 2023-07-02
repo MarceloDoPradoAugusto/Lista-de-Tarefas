@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Lista de Tarefas 2022 com Armazenamento Local</title>
+	<!-- Importação do CSS -->
+	<link rel="stylesheet" href="main.css" />
+	<!-- Fim da Importação do CSS -->
+	<!-- Fontes -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+		rel="stylesheet">
+	<!-- Fim das Fontes -->
+</head>
+
+<body>
+	<!-- Contêiner do App -->
+	<main class="app">
+		<!-- Saudação -->
+		<section class="saudacao">
+			<h2 class="titulo">
+				E aí, <input type="text" id="nome" placeholder="Seu nome aqui" />
+			</h2>
+		</section>
+		<!-- Fim da Saudação -->
+
+		<!-- Nova Tarefa -->
+		<section class="criar-tarefa">
+			<h3>CRIAR UMA TAREFA</h3>
+			<form id="form-nova-tarefa">
+				<h4>O que você precisa fazer?</h4>
+				<input type="text" placeholder="ex: Comprar leite" name="conteudo" id="conteudo" />
+
+				<h4>Escolha uma categoria</h4>
+				<div class="opcoes">
+					<label>
+						<input type="radio" name="categoria" id="categoria1" value="negocios" />
+						<span class="bolha negocios"></span>
+						<div>Negócios</div>
+					</label>
+					<label>
+						<input type="radio" name="categoria" id="categoria2" value="pessoal" />
+						<span class="bolha pessoal"></span>
+						<div>Pessoal</div>
+					</label>
+				</div>
+
+				<input type="submit" value="Adicionar tarefa" />
+			</form>
+		</section>
+		<!-- Fim da Nova Tarefa -->
+
+		<!-- Lista de Tarefas -->
+		<section class="lista-tarefas">
+			<h3>LISTA DE TAREFAS</h3>
+			<div class="lista" id="lista-tarefas"></div>
+		</section>
+		<!-- Fim da Lista de Tarefas -->
+
+	</main>
+	<!-- Fim do Contêiner do App -->
+
+	<!-- Importação do JS -->
+	<script src="main.js"></script>
+	<!-- Fim da Importação do JS -->
+</body>
+
+</html>
